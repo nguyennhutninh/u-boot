@@ -1,0 +1,11 @@
+#!/bin/bash
+
+current_dir=$(pwd)
+
+echo $current_dir
+
+CC=$current_dir/build/gcc-linaro-6.4.1-2018.05-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-
+
+make ARCH=arm CROSS_COMPILE=${CC} distclean
+make ARCH=arm CROSS_COMPILE=${CC} am335x_evm_defconfig
+make ARCH=arm CROSS_COMPILE=${CC}
